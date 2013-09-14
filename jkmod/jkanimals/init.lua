@@ -1,6 +1,7 @@
 dofile(minetest.get_modpath("jkanimals").."/api.lua")
 dofile(minetest.get_modpath("jkanimals").."/cow.lua")
 dofile(minetest.get_modpath("jkanimals").."/sheep.lua")
+dofile(minetest.get_modpath("jkanimals").."/chicken.lua")
 
 -- Bucket of milk
 minetest.register_node("jkanimals:bucket_milk", 

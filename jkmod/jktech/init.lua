@@ -27,3 +27,12 @@ minetest.register_craft({
 	recipe = "jktech:bottle_ethanol",
 	burntime = 600,
 })
+
+minetest.register_craft({
+	output = "default:book",
+	recipe = {
+		{"", "default:paper",""},
+		{"jkanimals:leather", "default:paper",""},
+		{"", "default:paper",""}
+	}
+})
