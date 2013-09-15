@@ -4,6 +4,7 @@ dofile(minetest.get_modpath("jkanimals").."/api.lua")
 mobs:register_mob("jkanimals:chicken", {
 	type = "animal",
 	hp_max = 5,
+	animaltype = "clucky",
 	collisionbox = {-0.3, -0.75, -0.3, 0.3, 0.1, 0.3},
 	textures = {"chicken.png"},
 	visual = "mesh",
@@ -18,9 +19,10 @@ mobs:register_mob("jkanimals:chicken", {
 	water_damage = 1,
 	lava_damage = 5,
 	light_damage = 0,
-	sounds = {
-		random = "animals_cow",
-	},
+	jump = false,
+	--sounds = {
+	--	random = "animals_cow",
+	--},
 	animation = {
 		speed_normal = 15,
 		stand_start = 0,
@@ -54,4 +56,18 @@ mobs:register_mob("jkanimals:chicken", {
 	end
 })
 
---mobs:register_spawn("jkanimals:cow", {"default:dirt_with_grass"}, 20, 8, 9000, 1, 31000)
+mobs:register_spawn("jkanimals:chicken", {"default:dirt_with_grass"}, 20, 8, 9000, 1, 31000)
+
+-- Eggs
+minetest.register_node("jkanimals:egg", 
+	{
+		description = "Chicken Egg",
+		inventory_image  = "jkanimals_egg.png",
+		drawtype = "plantlike",
+		sunlight_propagates = false,
+		use_texture_alpha = true,
+		groups = {snappy=3,flammable=3},		
+		on_place = function(itemstack, placer, pointed_thing)			
+			return			
+		end
+})

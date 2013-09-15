@@ -38,6 +38,7 @@ function mobs:register_mob(name, def)
 		old_y = nil,
 		lifetimer = 600,
 		tamed = false,
+		animaltype = "",
 		
 		set_velocity = function(self, v)
 			local yaw = self.object:getyaw()
@@ -124,6 +125,13 @@ function mobs:register_mob(name, def)
 				if player_count == 0 then
 					self.object:remove()
 					return
+				end
+			end
+			
+			-- Chicken-egg
+			if animaltype == "clucky" then
+				if math.random(1, 100) <= 1 then
+					minetest.set_node(self.object.getpos(), {name="jkanimals:egg"})
 				end
 			end
 			
