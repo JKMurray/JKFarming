@@ -1,4 +1,6 @@
-dofile(minetest.get_modpath("jkanimals").."/api.lua")
+if not mobs then
+	dofile(minetest.get_modpath("jkanimals").."/api.lua")
+end
 dofile(minetest.get_modpath("jkanimals").."/cow.lua")
 dofile(minetest.get_modpath("jkanimals").."/sheep.lua")
 dofile(minetest.get_modpath("jkanimals").."/chicken.lua")

@@ -1,5 +1,4 @@
 -- Cow
-dofile(minetest.get_modpath("jkanimals").."/api.lua")
 
 mobs:register_mob("jkanimals:cow", {
 	type = "animal",
